@@ -1,6 +1,7 @@
+/*eslint-disable*/
 import cardFront from "../assets/images/bg-card-front.png";
 
-const CardFront = () => {
+const CardFront = ({ name, number, expMonth, expYear }) => {
 	return (
 		<div className="flex drop-shadow-2xl w-3/4 left-5 relative bottom-9">
 			<img
@@ -13,10 +14,12 @@ const CardFront = () => {
 					<div className="border-2 border-solid border-white h-4 w-4 rounded-full"></div>
 				</div>
 				<div className="">
-					<p className="text-xl ">0000 0000 0000 0000</p>
+					<p className="text-xl ">{number}</p>
 					<div className="text-[0.6rem] font-thin mt-4 flex justify-between">
-						<p className="">JANE APPLESEED</p>
-						<p className="">00/00</p>
+						<p className="uppercase">{name}</p>
+						<p className="">
+							{expMonth}/{expYear}
+						</p>
 					</div>
 				</div>
 			</div>

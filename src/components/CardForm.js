@@ -1,4 +1,16 @@
-const CardForm = () => {
+/*eslint-disable*/
+const CardForm = ({
+	name,
+	updateName,
+	number,
+	updateCardNumber,
+	cvv,
+	updateCVV,
+	expMonth,
+	updateExpiryMonth,
+	expYear,
+	updateExpiryYear,
+}) => {
 	return (
 		<form
 			className="w-full flex flex-col gap-6"
@@ -11,6 +23,8 @@ const CardForm = () => {
 					CARDHOLDER NAME
 				</label>
 				<input
+					value={name}
+					onChange={updateName}
 					placeholder="e.g. Jane Appleseed"
 					type="text"
 					name="cardholder name"
@@ -25,9 +39,11 @@ const CardForm = () => {
 					CARD NUMBER
 				</label>
 				<input
+					value={number}
+					onChange={updateCardNumber}
 					className="rounded-lg border-[1px] border-gray-300 border-solid px-3 mt-2 h-10 w-full"
 					placeholder="e.g. 1234 5678 9123 0000"
-					type="number"
+					type="text"
 					name="number"
 					id="number"
 				/>
@@ -41,6 +57,8 @@ const CardForm = () => {
 					</label>
 					<div className="grid grid-cols-2 gap-2">
 						<input
+							value={expMonth}
+							onChange={updateExpiryMonth}
 							className="rounded-lg border-[1px] border-gray-300 border-solid mt-2 px-3 h-10"
 							placeholder="MM"
 							type="text"
@@ -48,6 +66,8 @@ const CardForm = () => {
 							id=""
 						/>
 						<input
+							value={expYear}
+							onChange={updateExpiryYear}
 							type="text"
 							className="mt-2 rounded-lg border-[1px] border-gray-300 border-solid px-3 h-10"
 							placeholder="YY"
@@ -58,9 +78,11 @@ const CardForm = () => {
 					<label
 						className="text-sm text-[#21092f]"
 						htmlFor="">
-						CVC
+						CVV
 					</label>
 					<input
+						value={cvv}
+						onChange={updateCVV}
 						placeholder="e.g. 123"
 						className="h-10 mt-1 w-full border-[1px] border-gray-300 border-solid px-3 rounded-lg"
 						type="number"
