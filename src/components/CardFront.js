@@ -1,5 +1,6 @@
 /*eslint-disable*/
 import cardFront from "../assets/images/bg-card-front.png";
+import cardLogo from "../assets/images/card-logo.svg";
 
 const CardFront = ({ name, number, expMonth, expYear }) => {
 	return (
@@ -10,8 +11,7 @@ const CardFront = ({ name, number, expMonth, expYear }) => {
 			/>
 			<div className="absolute w-full flex flex-col justify-between h-full p-4">
 				<div className="flex items-center gap-2">
-					<div className="h-7 bg-white w-7 rounded-full"></div>
-					<div className="border-2 border-solid border-white h-4 w-4 rounded-full"></div>
+					<img className="w-16" src={cardLogo} alt="card logo" />
 				</div>
 				<div className="">
 					<p className="text-xl ">{number}</p>

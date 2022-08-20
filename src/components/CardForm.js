@@ -10,6 +10,7 @@ const CardForm = ({
 	updateExpiryMonth,
 	expYear,
 	updateExpiryYear,
+	submitForm
 }) => {
 	return (
 		<form
@@ -28,7 +29,6 @@ const CardForm = ({
 					placeholder="e.g. Jane Appleseed"
 					type="text"
 					name="cardholder name"
-					id="name"
 					className="rounded-lg border-[1px] px-3 border-gray-300 border-solid mt-2 h-10 w-full"
 				/>
 			</div>
@@ -45,7 +45,6 @@ const CardForm = ({
 					placeholder="e.g. 1234 5678 9123 0000"
 					type="text"
 					name="number"
-					id="number"
 				/>
 			</div>
 			<div className="grid grid-cols-2 gap-2">
@@ -63,7 +62,6 @@ const CardForm = ({
 							placeholder="MM"
 							type="text"
 							name=""
-							id=""
 						/>
 						<input
 							value={expYear}
@@ -87,11 +85,12 @@ const CardForm = ({
 						className="h-10 mt-1 w-full border-[1px] border-gray-300 border-solid px-3 rounded-lg"
 						type="number"
 						name=""
-						id=""
 					/>
 				</div>
 			</div>
-			<button className="w-full h-14 rounded-lg bg-[#21092f] text-xl text-white">
+			<button
+				onClick={() => submitForm(true)}
+				className="w-full h-14 rounded-lg bg-[#21092f] text-xl text-white">
 				Confirm
 			</button>
 		</form>
