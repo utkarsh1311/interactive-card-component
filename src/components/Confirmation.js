@@ -3,7 +3,7 @@ import confirmIcon from "../assets/images/icon-complete.svg";
 
 const Confirmation = ({ resetForm }) => {
 	return (
-		<div className="font-space-grotesk flex flex-col justify-center items-center text-center">
+		<div className=" font-space-grotesk flex flex-col justify-center items-center text-center">
 			<img
 				className=""
 				src={confirmIcon}
@@ -23,5 +23,6 @@ const Confirmation = ({ resetForm }) => {
 		</div>
 	);
 };
+
 
 export default Confirmation;

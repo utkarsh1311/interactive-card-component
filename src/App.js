@@ -6,11 +6,11 @@ import CardForm from "./components/CardForm";
 import { useState } from "react";
 import Confirmation from "./components/Confirmation";
 const App = () => {
-	const [name, setName] = useState("Jane Appleseed");
-	const [number, setNumber] = useState("0000000000000000");
-	const [expMonth, setExpMonth] = useState("MM");
-	const [expYear, setExpYear] = useState("YY");
-	const [cvv, setCvv] = useState("000");
+	const [name, setName] = useState("");
+	const [number, setNumber] = useState("");
+	const [expMonth, setExpMonth] = useState();
+	const [expYear, setExpYear] = useState();
+	const [cvv, setCvv] = useState("");
 	const [submitted, setSubmitted] = useState(false);
 
 	const updateCardNumber = e => {
@@ -37,18 +37,23 @@ const App = () => {
 		}
 	};
 
+	const submitForm = e => {
+		e.preventDefault();
+		setSubmitted(true);
+	};
+
 	const resetForm = () => {
-		setCvv("000");
-		setName("Jane Appleseed");
-		setNumber("0000000000000000")
-		setExpMonth("MM")
-		setExpYear("YY");
+		setCvv("");
+		setName("");
+		setNumber("");
+		setExpMonth("");
+		setExpYear("");
 		setSubmitted(false);
-	}
+	};
 
 	return (
-		<main className="grid grid-rows-3 text-gray-50 tracking-wider font-space-grotesk h-screen">
-			<div className="bg-card-bg-image-mobile w-full">
+		<main className="grid grid-rows-3 lg:grid-rows-1 lg:grid-cols-3 text-gray-50 tracking-wider font-space-grotesk h-screen">
+			<div className="bg-card-bg-image-mobile lg:bg-card-bg-image-desktop lg:bg-cover w-full">
 				<CardBack cvv={cvv} />
 				<CardFront
 					name={name}
@@ -57,7 +62,7 @@ const App = () => {
 					expYear={expYear}
 				/>
 			</div>
-			<div className="row-span-2 pt-20 rounded-lg  text-black px-5">
+			<div className="row-span-2 pt-20 rounded-lg lg:col-span-2 lg:flex lg:justify-center lg:items-center lg:pt-0  text-black px-5">
 				{!submitted ? (
 					<CardForm
 						name={name}
@@ -70,10 +75,10 @@ const App = () => {
 						updateExpiryMonth={updateExpiryMonth}
 						expYear={expYear}
 						updateExpiryYear={updateExpiryYear}
-						submitForm={setSubmitted}
+						submitForm={submitForm}
 					/>
 				) : (
-					<Confirmation resetForm={resetForm}/>
+					<Confirmation resetForm={resetForm} />
 				)}
 			</div>
 		</main>
