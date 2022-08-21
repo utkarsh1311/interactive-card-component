@@ -24,5 +24,4 @@ const Confirmation = ({ resetForm }) => {
 	);
 };
 
-
 export default Confirmation;
