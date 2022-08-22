@@ -21,7 +21,7 @@ const CardForm = ({
 			<div>
 				<label
 					className="text-sm text-[#21092f]"
-					htmlFor="cardholder name">
+					htmlFor="name">
 					CARDHOLDER NAME
 				</label>
 				<input
@@ -32,8 +32,8 @@ const CardForm = ({
 					onChange={updateName}
 					placeholder="e.g. Jane Appleseed"
 					type="text"
-					name="cardholder name"
-					className="rounded-lg border-[1px] px-3 border-gray-300 border-solid mt-2 h-10 w-full focus:outline-[#600594] invalid:outline-red-500"
+					name="name"
+					className=" form-input mt-2 w-full"
 				/>
 			</div>
 			<div>
@@ -44,10 +44,11 @@ const CardForm = ({
 				</label>
 				<input
 					required
+					id="number"
 					minLength={16}
 					value={number}
 					onChange={updateCardNumber}
-					className="rounded-lg border-[1px] focus:outline-[#600594] border-gray-300 border-solid px-3 mt-2 h-10 w-full"
+					className="form-input  mt-2  w-full"
 					placeholder="e.g. 1234 5678 9123 0000"
 					type="text"
 					name="number"
@@ -65,17 +66,18 @@ const CardForm = ({
 							required
 							value={expMonth}
 							onChange={updateExpiryMonth}
-							className="rounded-lg focus:outline-[#600594] border-[1px] border-gray-300 border-solid mt-2 px-3 h-10"
+							className="form-input mt-2"
 							placeholder="MM"
 							type="number"
-							name=""
+							name="expMonth"
 						/>
 						<input
 							required
 							value={expYear}
+							name="expYear"
 							onChange={updateExpiryYear}
 							type="number"
-							className="mt-2 focus:outline-[#600594] rounded-lg border-[1px] border-gray-300 border-solid px-3 h-10"
+							className="mt-2  form-input"
 							placeholder="YY"
 						/>
 					</div>
@@ -83,15 +85,16 @@ const CardForm = ({
 				<div className="col-span-1">
 					<label
 						className="text-sm text-[#21092f]"
-						htmlFor="">
+						htmlFor="cvv">
 						CVV
 					</label>
 					<input
+						id="cvv"
 						required
 						value={cvv}
 						onChange={updateCVV}
 						placeholder="e.g. 123"
-						className="h-10 mt-1 w-full focus:outline-[#600594] border-[1px] border-gray-300 border-solid px-3 rounded-lg"
+						className=" mt-1 w-full form-input"
 						type="number"
 						name="cvv"
 					/>
