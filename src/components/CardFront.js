@@ -7,7 +7,7 @@ const CardFront = ({ name, number, expMonth, expYear }) => {
 	const props = useSpring({
 		from: { transform: "translate(-100%,0)" },
 		to: { transform: "translate(0%,0)" },
-		config: { duration: 1000 },
+		config: { duration: 600 },
 	});
 	return (
 		<animated.div
