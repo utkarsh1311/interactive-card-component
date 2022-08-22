@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-    .form-input {
-        @apply rounded-lg h-10 border-[1px] border-gray-300 border-solid focus:outline-[#600594] px-3;
-    }
+	.form-input {
+		@apply rounded-lg h-10 border-[1px] border-gray-300 border-solid focus:outline-[#600594] px-3;
+	}
 }

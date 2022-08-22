@@ -11,12 +11,12 @@ const CardBack = ({ cvv }) => {
 	return (
 		<animated.div
 			style={props}
-			className="w-3/4 relative top-8 float-right right-5 lg:top-1/2 lg:left-1/4 lg:drop-shadow-2xl">
+			className="w-3/4 relative top-8 float-right right-5 md:w-1/2 md:right-32">
 			<img
 				src={cardBack}
 				alt="card-back"
 			/>
-			<p className="text-xs top-[68px] right-10 absolute lg:top-[5.2rem] lg:text-sm">
+			<p className="text-xs top-[68px] right-10 absolute md:top-[5.6rem] md:text-lg">
 				{cvv ? cvv : "000"}
 			</p>
 		</animated.div>

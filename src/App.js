@@ -53,7 +53,7 @@ const App = () => {
 
 	return (
 		<main className="grid grid-rows-3 lg:grid-rows-1 lg:grid-cols-3 text-gray-50 tracking-wider font-space-grotesk h-screen">
-			<div className="bg-card-bg-image-mobile lg:bg-card-bg-image-desktop lg:bg-cover w-full">
+			<div className="bg-card-bg-image-mobile bg-no-repeat bg-cover lg:bg-card-bg-image-desktop w-full">
 				<CardBack cvv={cvv} />
 				<CardFront
 					name={name}

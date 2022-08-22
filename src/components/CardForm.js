@@ -27,7 +27,7 @@ const CardForm = ({
 		<animated.form
 			style={props}
 			onSubmit={submitForm}
-			className="w-full flex flex-col gap-6 lg:w-1/3 lg:gap-4"
+			className="w-full flex flex-col gap-6 md:w-2/3 md:mx-auto md:mt-14"
 			action="
 			">
 			<div>
@@ -45,12 +45,12 @@ const CardForm = ({
 					placeholder="e.g. Jane Appleseed"
 					type="text"
 					name="name"
-					className=" form-input mt-2 w-full"
+					className=" form-input mt-2 w-full "
 				/>
 			</div>
 			<div>
 				<label
-					className="text-sm text-[#21092f]"
+					className="text-sm text-[#21092f] "
 					htmlFor="number">
 					CARD NUMBER
 				</label>
@@ -60,25 +60,25 @@ const CardForm = ({
 					minLength={16}
 					value={number}
 					onChange={updateCardNumber}
-					className="form-input  mt-2  w-full"
+					className="form-input mt-2 w-full "
 					placeholder="e.g. 1234 5678 9123 0000"
 					type="text"
 					name="number"
 				/>
 			</div>
 			<div className="grid grid-cols-2 gap-2">
-				<div className="flex col-span-1 flex-col">
+				<div className="flex col-span-1 flex-col ">
 					<label
 						className="text-sm text-[#21092f]"
 						htmlFor="">
 						EXP. DATE (MM/YY)
 					</label>
-					<div className="grid grid-cols-2 gap-2">
+					<div className="grid grid-cols-2 gap-2 items-center">
 						<input
 							required
 							value={expMonth}
 							onChange={updateExpiryMonth}
-							className="form-input mt-2"
+							className="form-input mt-2 "
 							placeholder="MM"
 							type="number"
 							name="expMonth"
@@ -89,14 +89,14 @@ const CardForm = ({
 							name="expYear"
 							onChange={updateExpiryYear}
 							type="number"
-							className="mt-2  form-input"
+							className="mt-2  form-input "
 							placeholder="YY"
 						/>
 					</div>
 				</div>
-				<div className="col-span-1">
+				<div className="col-span-1 ">
 					<label
-						className="text-sm text-[#21092f]"
+						className="text-sm text-[#21092f] "
 						htmlFor="cvv">
 						CVV
 					</label>
