@@ -27,7 +27,7 @@ const CardForm = ({
 		<animated.form
 			style={props}
 			onSubmit={submitForm}
-			className="w-full flex flex-col gap-6 md:w-2/3 md:mx-auto md:mt-14"
+			className="w-full flex flex-col gap-6 md:w-2/3 md:mx-auto md:mt-14 lg:w-1/2 xl:w-2/5"
 			action="
 			">
 			<div>
