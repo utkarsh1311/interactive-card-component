@@ -1,4 +1,7 @@
 /*eslint-disable*/
+import { useSpring, animated } from "@react-spring/web";
+import { useState } from "react";
+
 const CardForm = ({
 	name,
 	updateName,
@@ -12,8 +15,17 @@ const CardForm = ({
 	updateExpiryYear,
 	submitForm,
 }) => {
+	const [flip, set] = useState(false);
+	const props = useSpring({
+		to: { opacity: 1 },
+		from: { opacity: 0 },
+		reverse: flip,
+		delay: 400,
+	});
+
 	return (
-		<form
+		<animated.form
+			style={props}
 			onSubmit={submitForm}
 			className="w-full flex flex-col gap-6 lg:w-1/3 lg:gap-4"
 			action="
@@ -26,7 +38,7 @@ const CardForm = ({
 				</label>
 				<input
 					minLength={5}
-					pattern="[A-Za-z]+"
+					pattern="[A-Za-z ]+"
 					required
 					value={name}
 					onChange={updateName}
@@ -105,7 +117,7 @@ const CardForm = ({
 				className="w-full h-14 rounded-lg bg-[#21092f] text-xl text-white">
 				Confirm
 			</button>
-		</form>
+		</animated.form>
 	);
 };
 

@@ -1,9 +1,21 @@
 /*eslint-disable*/
 import confirmIcon from "../assets/images/icon-complete.svg";
+import { useSpring, animated } from "@react-spring/web";
+import { useState } from "react";
 
 const Confirmation = ({ resetForm }) => {
+	const [flip, set] = useState(false);
+	const props = useSpring({
+		to: { opacity: 1 },
+		from: { opacity: 0 },
+		reverse: flip,
+		delay: 300,
+	});
+
 	return (
-		<div className=" font-space-grotesk flex flex-col justify-center items-center text-center">
+		<animated.div
+			style={props}
+			className=" font-space-grotesk flex flex-col justify-center items-center text-center">
 			<img
 				className=""
 				src={confirmIcon}
@@ -20,7 +32,7 @@ const Confirmation = ({ resetForm }) => {
 				className="w-full mt-4 h-14 rounded-lg bg-[#21092f] text-xl text-white">
 				Continue
 			</button>
-		</div>
+		</animated.div>
 	);
 };
 

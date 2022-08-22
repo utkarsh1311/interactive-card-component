@@ -26,7 +26,7 @@ const App = () => {
 	};
 
 	const updateExpiryMonth = e => {
-		if (e.target.value.length <= 2) {
+		if (e.target.value.length <= 2 && +e.target.value <= 12 ) {
 			setExpMonth(e.target.value);
 		}
 	};

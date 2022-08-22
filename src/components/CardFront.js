@@ -1,10 +1,18 @@
 /*eslint-disable*/
 import cardFront from "../assets/images/bg-card-front.png";
 import cardLogo from "../assets/images/card-logo.svg";
+import { useSpring, animated } from "@react-spring/web";
 
 const CardFront = ({ name, number, expMonth, expYear }) => {
+	const props = useSpring({
+		from: { transform: "translate(-100%,0)" },
+		to: { transform: "translate(0%,0)" },
+		config: { duration: 1000 },
+	});
 	return (
-		<div className="flex drop-shadow-2xl w-3/4 left-5 relative bottom-9 lg:left-44 lg:bottom-24">
+		<animated.div
+			style={props}
+			className="flex drop-shadow-2xl w-3/4 left-5 relative bottom-9 lg:left-44 lg:bottom-24">
 			<img
 				src={cardFront}
 				alt="card-front"
@@ -32,7 +40,7 @@ const CardFront = ({ name, number, expMonth, expYear }) => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</animated.div>
 	);
 };
 
