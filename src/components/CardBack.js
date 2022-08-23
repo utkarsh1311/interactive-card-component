@@ -11,7 +11,7 @@ const CardBack = ({ cvv }) => {
 	return (
 		<animated.div
 			style={props}
-			className="w-3/4 relative top-8 float-right right-5 md:w-1/2 md:right-32 lg:w-full lg:-right-32 lg:top-1/2 xl:float-bottom xl:top-[55%]">
+			className="w-3/4 relative top-8 float-right right-5 md:w-1/2 md:right-32 lg:w-full lg:-right-32 lg:top-1/2 xl:top-[60%] 2xl:top-[55%] 2xl:left-[70%]">
 			<img
 				src={cardBack}
 				alt="card-back"

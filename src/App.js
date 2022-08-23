@@ -14,7 +14,11 @@ const App = () => {
 	const [submitted, setSubmitted] = useState(false);
 
 	const updateCardNumber = e => {
-		if (e.target.value.length <= 16) setNumber(e.target.value);
+		e.target.value = e.target.value
+			.replace(/[^\dA-Z]/g, "")
+			.replace(/(.{4})/g, "$1 ")
+			.trim();
+		if (e.target.value.length <= 19) setNumber(e.target.value);
 	};
 
 	const updateCVV = e => {
@@ -26,7 +30,7 @@ const App = () => {
 	};
 
 	const updateExpiryMonth = e => {
-		if (e.target.value.length <= 2 && +e.target.value <= 12 ) {
+		if (e.target.value.length <= 2 && +e.target.value <= 12) {
 			setExpMonth(e.target.value);
 		}
 	};

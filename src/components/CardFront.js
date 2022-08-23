@@ -12,7 +12,7 @@ const CardFront = ({ name, number, expMonth, expYear }) => {
 	return (
 		<animated.div
 			style={props}
-			className="flex drop-shadow-2xl w-3/4 left-5 relative bottom-9 md:w-1/2 md:top-1/2 md:left-32 lg:w-full lg:top-4 lg:left-20 xl:-top-14">
+			className="flex drop-shadow-2xl w-3/4 left-5 relative bottom-9 md:w-1/2 md:top-1/2 md:left-32 lg:w-full lg:top-4 lg:left-20 xl:-top-14  2xl:left-[56%] 2xl:top-[5%] 2xl:w-2/3">
 			<img
 				src={cardFront}
 				alt="card-front"
@@ -30,10 +30,10 @@ const CardFront = ({ name, number, expMonth, expYear }) => {
 						{number ? number : "1234 5678 9123 0000"}
 					</p>
 					<div className="text-[0.6rem] font-thin mt-4 flex justify-between md:text-xs">
-						<p className="uppercase lg:text-xs">
+						<p className="uppercase lg:text-xs ">
 							{name ? name : "Jane Appleseed"}
 						</p>
-						<p className="md:text-xs">
+						<p className="md:text-xs ">
 							{expMonth ? expMonth : "MM"}/
 							{expYear ? expYear : "YY"}
 						</p>
